@@ -30,7 +30,7 @@ Benutzen Sie die Datei *concatenated_dna.fasta* um einen phylogenetischen Baum z
 ## Bäume und Alignments in R visualisieren 
 
 An den Computern im Übungsraum ist R / RStudio und die Pakete die wir benutzen schon installiert.
-Hier wollen wir kurz zeigen welche Möglichkeiten Skripten zeigen. 
+Hier wollen wir kurz zeigen welche Möglichkeiten Skripten bieten. 
 
 
 Öffnen Sie RStudio auf den Lab-Computern und kopieren Sie den folgenden Code in die Konsole (Console).
