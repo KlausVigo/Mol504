@@ -1,0 +1,276 @@
+IQ-TREE multicore version 1.6.12 for Linux 64-bit built Aug 15 2019
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    fermat (AVX2, FMA3, 1009 GB RAM)
+Command: ../../iqtree -s concatenated_dna.fasta -m TEST -bb 1000 -alrt 1000
+Seed:    235901 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Thu Jan  9 08:24:12 2025
+Kernel:  AVX+FMA - 1 threads (128 CPU cores detected)
+
+HINT: Use -nt option to specify number of threads because your CPU has 128 cores!
+HINT: -nt AUTO will automatically determine the best number of threads to use.
+
+Reading alignment file concatenated_dna.fasta ... Fasta format detected
+Alignment most likely contains DNA/RNA sequences
+Alignment has 45 sequences with 4422 columns, 1233 distinct patterns
+980 parsimony-informative, 450 singleton sites, 2992 constant sites
+                             Gap/Ambiguity  Composition  p-value
+   1  Canis_lupus_familiaris        11.19%    passed     78.81%
+   2  Ailuropoda_melanoleuca        11.62%    passed     23.82%
+   3  Felis_catus                   15.06%    failed      2.43%
+   4  Odobenus_rosmarus_divergens   32.86%    passed     86.99%
+   5  Mustela_putorius_furo         13.14%    passed     46.21%
+   6  Leptonychotes_weddellii       30.89%    passed     71.87%
+   7  Panthera_tigris               15.15%    failed      0.09%
+   8  Ursus_maritimus               44.75%    failed      1.15%
+   9  Acinonyx_jubatus              13.52%    failed      3.62%
+  10  Panthera_pardus               13.61%    failed      2.22%
+  11  Neomonachus_schauinslandi     49.10%    passed     11.32%
+  12  Enhydra_lutris_kenyoni        40.82%    passed     52.97%
+  13  Canis_lupus_dingo             12.55%    passed     52.99%
+  14  Callorhinus_ursinus           49.34%    failed      4.36%
+  15  Puma_concolor                 50.68%    passed     20.68%
+  16  Vulpes_vulpes                 49.71%    failed      0.51%
+  17  Ursus_arctos                  48.85%    failed      1.07%
+  18  Zalophus_californianus        48.67%    failed      3.50%
+  19  Eumetopias_jubatus            49.34%    failed      3.62%
+  20  Suricata_suricatta            50.18%    passed     31.89%
+  21  Lynx_canadensis               46.25%    passed     53.24%
+  22  Mustela_erminea               12.94%    passed     37.07%
+  23  Phoca_vitulina                48.08%    passed      6.32%
+  24  Lontra_canadensis             13.66%    passed     12.60%
+  25  Mirounga_leonina              49.34%    passed     10.41%
+  26  Halichoerus_grypus            49.46%    passed      6.94%
+  27  Hyaena_hyaena                 49.82%    passed     35.40%
+  28  Puma_yagouaroundi             12.73%    failed      2.29%
+  29  Vulpes_lagopus                48.94%    failed      0.25%
+  30  Panthera_leo                  17.50%    failed      1.08%
+  31  Prionailurus_bengalensis      13.05%    failed      2.94%
+  32  Neovison_vison                50.86%    passed      7.56%
+  33  Leopardus_geoffroyi           13.07%    passed      5.33%
+  34  Ursus_americanus              45.32%    passed     55.63%
+  35  Mirounga_angustirostris       49.37%    passed     12.89%
+  36  Meles_meles                   48.73%    passed     15.82%
+  37  Lynx_rufus                    50.68%    passed     36.90%
+  38  Lutra_lutra                   44.10%    failed      2.96%
+  39  Prionailurus_viverrinus       48.89%    passed     66.93%
+  40  Panthera_uncia                15.42%    failed      0.16%
+  41  Nyctereutes_procyonoides      49.53%    failed      0.16%
+  42  Neofelis_nebulosa             13.61%    failed      1.87%
+  43  Mustela_lutreola              17.19%    passed     38.35%
+  44  Mustela_nigripes              46.40%    passed     33.13%
+  45  Panthera_onca                 14.70%    failed      1.12%
+WARNING: 4 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                         33.79%  19 sequences failed composition chi2 test (p-value<5%; df=3)
+
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.005 seconds
+NOTE: ModelFinder requires 11 MB RAM!
+ModelFinder will test 88 DNA models (sample size: 4422) ...
+ No. Model         -LnL         df  AIC          AICc         BIC
+  1  JC            18490.054    87  37154.109    37157.642    37710.417
+  2  JC+I          18268.664    88  36713.328    36716.943    37276.031
+  3  JC+G4         18252.522    88  36681.043    36684.658    37243.746
+  4  JC+I+G4       18254.016    89  36686.032    36689.730    37255.129
+  5  F81+F         18411.578    90  37003.156    37006.938    37578.647
+  6  F81+F+I       18190.376    91  36562.752    36566.619    37144.637
+  7  F81+F+G4      18173.747    91  36529.494    36533.361    37111.379
+  8  F81+F+I+G4    18175.433    92  36534.866    36538.819    37123.146
+  9  K2P           18180.607    88  36537.213    36540.828    37099.916
+ 10  K2P+I         17947.776    89  36073.551    36077.249    36642.648
+ 11  K2P+G4        17928.879    89  36035.759    36039.457    36604.856
+ 12  K2P+I+G4      17930.425    90  36040.849    36044.631    36616.341
+ 13  HKY+F         18088.800    91  36359.601    36363.468    36941.487
+ 14  HKY+F+I       17854.831    92  35893.661    35897.614    36481.941
+ 15  HKY+F+G4      17835.318    92  35854.635    35858.588    36442.915
+ 16  HKY+F+I+G4    17837.129    93  35860.259    35864.299    36454.933
+ 17  TNe           18178.540    89  36535.080    36538.778    37104.177
+ 18  TNe+I         17947.497    90  36074.994    36078.776    36650.485
+ 19  TNe+G4        17928.189    90  36036.378    36040.160    36611.869
+ 20  TNe+I+G4      17929.810    91  36041.620    36045.487    36623.506
+ 21  TN+F          18085.484    92  36354.969    36358.922    36943.249
+ 22  TN+F+I        17853.998    93  35893.996    35898.036    36488.670
+ 23  TN+F+G4       17833.923    93  35853.845    35857.885    36448.519
+ 24  TN+F+I+G4     17835.831    94  35859.662    35863.790    36460.731
+ 25  K3P           18180.562    89  36539.124    36542.822    37108.221
+ 26  K3P+I         17947.680    90  36075.361    36079.143    36650.852
+ 27  K3P+G4        17928.791    90  36037.583    36041.365    36613.074
+ 28  K3P+I+G4      17930.255    91  36042.510    36046.377    36624.396
+ 29  K3Pu+F        18088.306    92  36360.612    36364.565    36948.892
+ 30  K3Pu+F+I      17854.157    93  35894.314    35898.354    36488.988
+ 31  K3Pu+F+G4     17834.647    93  35855.295    35859.334    36449.969
+ 32  K3Pu+F+I+G4   17836.382    94  35860.764    35864.891    36461.832
+ 33  TPM2+F        18087.948    92  36359.896    36363.849    36948.176
+ 34  TPM2+F+I      17853.536    93  35893.072    35897.112    36487.747
+ 35  TPM2+F+G4     17833.705    93  35853.410    35857.450    36448.084
+ 36  TPM2+F+I+G4   17835.495    94  35858.990    35863.118    36460.059
+ 37  TPM2u+F       18087.948    92  36359.896    36363.849    36948.176
+ 38  TPM2u+F+I     17853.536    93  35893.072    35897.112    36487.747
+ 39  TPM2u+F+G4    17833.705    93  35853.410    35857.450    36448.085
+ 40  TPM2u+F+I+G4  17835.475    94  35858.949    35863.077    36460.018
+ 41  TPM3+F        18088.382    92  36360.764    36364.717    36949.044
+ 42  TPM3+F+I      17854.388    93  35894.775    35898.815    36489.450
+ 43  TPM3+F+G4     17834.936    93  35855.871    35859.911    36450.545
+ 44  TPM3+F+I+G4   17836.592    94  35861.184    35865.312    36462.253
+ 45  TPM3u+F       18088.382    92  36360.765    36364.717    36949.045
+ 46  TPM3u+F+I     17854.388    93  35894.775    35898.815    36489.450
+ 47  TPM3u+F+G4    17834.935    93  35855.870    35859.910    36450.544
+ 48  TPM3u+F+I+G4  17836.574    94  35861.147    35865.275    36462.216
+ 49  TIMe          18178.495    90  36536.990    36540.772    37112.482
+ 50  TIMe+I        17947.415    91  36076.830    36080.697    36658.716
+ 51  TIMe+G4       17928.101    91  36038.202    36042.069    36620.088
+ 52  TIMe+I+G4     17929.566    92  36043.131    36047.084    36631.411
+ 53  TIM+F         18084.993    93  36355.987    36360.027    36950.661
+ 54  TIM+F+I       17853.343    94  35894.686    35898.813    36495.754
+ 55  TIM+F+G4      17833.255    94  35854.509    35858.637    36455.578
+ 56  TIM+F+I+G4    17835.005    95  35860.010    35864.226    36467.473
+ 57  TIM2e         18178.083    90  36536.165    36539.947    37111.656
+ 58  TIM2e+I       17946.710    91  36075.419    36079.286    36657.305
+ 59  TIM2e+G4      17927.516    91  36037.032    36040.899    36618.918
+ 60  TIM2e+I+G4    17928.886    92  36041.772    36045.725    36630.052
+ 61  TIM2+F        18084.638    93  36355.275    36359.315    36949.950
+ 62  TIM2+F+I      17852.723    94  35893.446    35897.573    36494.514
+ 63  TIM2+F+G4     17832.360    94  35852.720    35856.848    36453.789
+ 64  TIM2+F+I+G4   17834.141    95  35858.281    35862.498    36465.744
+ 65  TIM3e         18178.132    90  36536.263    36540.045    37111.754
+ 66  TIM3e+I       17946.834    91  36075.668    36079.535    36657.553
+ 67  TIM3e+G4      17927.230    91  36036.461    36040.328    36618.346
+ 68  TIM3e+I+G4    17928.659    92  36041.318    36045.271    36629.598
+ 69  TIM3+F        18085.069    93  36356.138    36360.178    36950.813
+ 70  TIM3+F+I      17853.550    94  35895.099    35899.227    36496.168
+ 71  TIM3+F+G4     17833.526    94  35855.053    35859.180    36456.121
+ 72  TIM3+F+I+G4   17835.185    95  35860.371    35864.587    36467.834
+ 73  TVMe          18179.619    91  36541.238    36545.105    37123.124
+ 74  TVMe+I        17946.105    92  36076.209    36080.162    36664.489
+ 75  TVMe+G4       17927.028    92  36038.056    36042.009    36626.336
+ 76  TVMe+I+G4     17928.252    93  36042.505    36046.545    36637.179
+ 77  TVM+F         18087.272    94  36362.545    36366.672    36963.613
+ 78  TVM+F+I       17852.743    95  35895.487    35899.703    36502.950
+ 79  TVM+F+G4      17832.969    95  35855.937    35860.154    36463.400
+ 80  TVM+F+I+G4    17834.555    96  35861.109    35865.416    36474.967
+ 81  SYM           18177.551    92  36539.101    36543.054    37127.381
+ 82  SYM+I         17945.826    93  36077.652    36081.692    36672.326
+ 83  SYM+G4        17926.335    93  36038.670    36042.709    36633.344
+ 84  SYM+I+G4      17927.638    94  36043.275    36047.403    36644.344
+ 85  GTR+F         18083.966    95  36357.932    36362.149    36965.395
+ 86  GTR+F+I       17851.928    96  35895.857    35900.163    36509.714
+ 87  GTR+F+G4      17831.609    96  35855.218    35859.524    36469.076
+ 88  GTR+F+I+G4    17833.280    97  35860.561    35864.958    36480.812
+Akaike Information Criterion:           TIM2+F+G4
+Corrected Akaike Information Criterion: TIM2+F+G4
+Bayesian Information Criterion:         HKY+F+G4
+Best-fit model: HKY+F+G4 chosen according to BIC
+
+All model information printed to concatenated_dna.fasta.model.gz
+CPU time for ModelFinder: 5.988 seconds (0h:0m:5s)
+Wall-clock time for ModelFinder: 6.243 seconds (0h:0m:6s)
+Generating 1000 samples for ultrafast bootstrap (seed: 235901)...
+
+NOTE: 11 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -18205.774
+2. Current log-likelihood: -18040.428
+3. Current log-likelihood: -17839.591
+4. Current log-likelihood: -17835.327
+Optimal log-likelihood: -17835.318
+Rate parameters:  A-C: 1.00000  A-G: 3.36221  A-T: 1.00000  C-G: 1.00000  C-T: 3.36221  G-T: 1.00000
+Base frequencies:  A: 0.296  C: 0.215  G: 0.215  T: 0.274
+Gamma shape alpha: 0.522
+Parameters optimization took 4 rounds (0.314 sec)
+Computing ML distances based on estimated model parameters... 0.024 sec
+Computing BIONJ tree...
+0.072 seconds
+Log-likelihood of BIONJ tree: -18070.116
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 0.623 second
+Computing log-likelihood of 98 initial trees ... 2.293 seconds
+Current best score: -17834.418
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -17830.344
+Iteration 10 / LogL: -17834.680 / Time: 0h:0m:5s
+Iteration 20 / LogL: -17835.544 / Time: 0h:0m:6s
+Finish initializing candidate tree set (7)
+Current best tree score: -17830.344 / CPU time: 6.175
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Iteration 30 / LogL: -17835.516 / Time: 0h:0m:10s (0h:0m:25s left)
+Iteration 40 / LogL: -17830.346 / Time: 0h:0m:12s (0h:0m:20s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 49: -17829.145
+Iteration 50 / LogL: -17832.213 / Time: 0h:0m:15s (0h:0m:32s left)
+Log-likelihood cutoff on original alignment: -17873.054
+BETTER TREE FOUND at iteration 52: -17829.144
+Iteration 60 / LogL: -17829.148 / Time: 0h:0m:18s (0h:0m:28s left)
+Iteration 70 / LogL: -17829.145 / Time: 0h:0m:21s (0h:0m:24s left)
+Iteration 80 / LogL: -17834.543 / Time: 0h:0m:23s (0h:0m:21s left)
+Iteration 90 / LogL: -17829.147 / Time: 0h:0m:26s (0h:0m:18s left)
+Iteration 100 / LogL: -17829.881 / Time: 0h:0m:29s (0h:0m:15s left)
+Log-likelihood cutoff on original alignment: -17873.054
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.981
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 110 / LogL: -17833.646 / Time: 0h:0m:32s (0h:0m:26s left)
+Iteration 120 / LogL: -17829.149 / Time: 0h:0m:34s (0h:0m:23s left)
+Iteration 130 / LogL: -17829.184 / Time: 0h:0m:37s (0h:0m:20s left)
+Iteration 140 / LogL: -17829.884 / Time: 0h:0m:40s (0h:0m:17s left)
+Iteration 150 / LogL: -17829.151 / Time: 0h:0m:42s (0h:0m:14s left)
+Log-likelihood cutoff on original alignment: -17873.336
+Iteration 160 / LogL: -17909.284 / Time: 0h:0m:45s (0h:0m:11s left)
+UPDATE BEST LOG-LIKELIHOOD: -17829.144
+Iteration 170 / LogL: -17834.987 / Time: 0h:0m:48s (0h:0m:8s left)
+Iteration 180 / LogL: -17829.151 / Time: 0h:0m:51s (0h:0m:5s left)
+Iteration 190 / LogL: -17829.162 / Time: 0h:0m:54s (0h:0m:2s left)
+Iteration 200 / LogL: -17829.882 / Time: 0h:0m:57s (0h:0m:0s left)
+Log-likelihood cutoff on original alignment: -17873.336
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.999
+TREE SEARCH COMPLETED AFTER 200 ITERATIONS / Time: 0h:0m:57s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -17829.144
+Optimal log-likelihood: -17829.144
+Rate parameters:  A-C: 1.00000  A-G: 3.38531  A-T: 1.00000  C-G: 1.00000  C-T: 3.38531  G-T: 1.00000
+Base frequencies:  A: 0.296  C: 0.215  G: 0.215  T: 0.274
+Gamma shape alpha: 0.526
+Parameters optimization took 1 rounds (0.041 sec)
+BEST SCORE FOUND : -17829.144
+
+Testing tree branches by SH-like aLRT with 1000 replicates...
+4.427 sec.
+Creating bootstrap support values...
+Split supports printed to NEXUS file concatenated_dna.fasta.splits.nex
+Total tree length: 0.784
+
+Total number of iterations: 200
+CPU time used for tree search: 55.672 sec (0h:0m:55s)
+Wall-clock time used for tree search: 56.279 sec (0h:0m:56s)
+Total CPU time used: 60.748 sec (0h:1m:0s)
+Total wall-clock time used: 61.724 sec (0h:1m:1s)
+
+Computing bootstrap consensus tree...
+Reading input file concatenated_dna.fasta.splits.nex...
+45 taxa and 232 splits.
+Consensus tree written to concatenated_dna.fasta.contree
+Reading input trees file concatenated_dna.fasta.contree
+Log-likelihood of consensus tree: -17829.146
+
+Analysis results written to: 
+  IQ-TREE report:                concatenated_dna.fasta.iqtree
+  Maximum-likelihood tree:       concatenated_dna.fasta.treefile
+  Likelihood distances:          concatenated_dna.fasta.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          concatenated_dna.fasta.splits.nex
+  Consensus tree:                concatenated_dna.fasta.contree
+  Screen log file:               concatenated_dna.fasta.log
+
+Date and Time: Thu Jan  9 08:25:20 2025
