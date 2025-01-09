@@ -13,44 +13,36 @@ editor_options:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
-***
-
-### Learning Objectives
-
-
-- 
-- plot trees using scripts
-
-***
-
+## Alignments und phylogenetische Bäume mit Webtools erstellen
 
 Erzeugen Sie ein MSA von den Dateien *TTR_clean.fas* und *RAG2_clean.fas* mit *clustalOmega*, *mafft* oder *muscle5* (https://www.ebi.ac.uk/jdispatcher/msa).
 
-Betrachten Sie die Alignmente? Gibt es potientielle Probleme? Welche?
+* Betrachten Sie die Alignmente? Gibt es potientielle Probleme? Welche?
 
-Benutzen Sie die Datei *concatenated_dna.fasta* um einen phylogenetischen Baum zu  berechenen (http://iqtree.cibiv.univie.ac.at/). 
-Benutzen Sie die Standardeinstellungen.
+Benutzen Sie die Datei *concatenated_dna.fasta* um einen phylogenetischen Baum zu berechenen (http://iqtree.cibiv.univie.ac.at/). Benutzen Sie die Standardeinstellungen.
 
 * Welches Model wurde verwendet?
 
-* Sind die unterscheiedlichen Familien (Katzen, Hunde, Bären, etc. monophyletic?
+* Sind die unterschiedlichen Familien (Katzen, Hunde, Bären, etc.) monophyletic?
 * Sie können die Bäume mit (https://itol.embl.de/) anschauen!
 
 
-# Bäume und Alignments in R visualisieren 
+## Bäume und Alignments in R visualisieren 
 
-An den Computern im Übungsraum ist R / RStudio und die Pakete die wir benutzen schon installiert. 
+An den Computern im Übungsraum ist R / RStudio und die Pakete die wir benutzen schon installiert.
+Hier wollen wir kurz zeigen welche Möglichkeiten Skripten zeigen. 
 
 
-Öffnen Sie RStudio und kopieren Sie den folgenden Code in die Konsole (Console).
+Öffnen Sie RStudio auf den Lab-Computern und kopieren Sie den folgenden Code in die Konsole (Console).
 Zuerst laden wir zwei Packete die Phylogonien erstellen und bearbeiten. 
 ```{R, eval=TRUE}
 library(ape)
 library(phangorn)
 ```
 
-Danach laden wir 3 Datensätze, einen phylogenitischen Baum, ein Alignment und eine Tabelle mit information zu unseren Daten.  
+
+
+Danach laden wir 3 Datensätze, einen phylogenetischen Baum, ein Alignment und eine Tabelle mit Information zu unseren Daten.  
 ```{R, eval=TRUE}
 tree_file <- "https://raw.githubusercontent.com/KlausVigo/Mol504/refs/heads/main/iqtree/concatenated_dna.fasta.treefile"
 align_file <- "https://raw.githubusercontent.com/KlausVigo/Mol504/refs/heads/main/data/concatenated_dna.fasta"
@@ -70,17 +62,23 @@ image(align[1:10, 251:300], show.bases=TRUE)
 
 Wir können auch phylogenetische Bäume malen und haben dafür eine Menge Optionen.
 ```{R, eval=TRUE}
+par(mar=c(1,1,1,1))
+plot(tree, cex=.75)
+```
+
+Jetzt verwenden wir ein paar Farben um die unterschiedlichen Familien besser zu erkennen.   
+```{R, eval=TRUE}
+par(mar=c(1,1,1,1))
 col <- c("green", "blue", "lightblue", "red", "orange", "brown", "yellow",      
          "darkgreen", "magenta")
 family_color <- setNames(col, unique(tab$Family))
+family_color
 
 tip_color <- setNames(family_color[tab$Family], tab$Species)
-tip_color
+
 
 tree <- midpoint(tree)
 
-par(mar=c(1,1,1,1))
-plot(tree, cex=.75)
 plot(tree, type="fan", tip.col=tip_color[tree$tip.label], cex=.5, show.node.label = TRUE)
 add.scale.bar()
 ```
@@ -89,10 +87,13 @@ Die Funtion *plot.phylo*, wir können aber nur *plot* schreiben, hat viele Optio
 ```{R, eval=FALSE}
 help(plot.phylo)
 ```
-Wir können die Species von dem Baum löschen, da es scheinbar mit der Sequenz Probleme gibt. 
+
+Wir können die Species "Lynx_canadensis" von dem Baum löschen, da es scheinbar mit der Sequenz Probleme gibt. Wie sieht der Baum jetzt aus?
 ```{R, eval=FALSE}
 tree2 <- drop.tip(tree, "Lynx_canadensis")
 tree <- midpoint(tree2)
 plot(tree, cex=.75)
 plot(tree, type="fan", tip.col=tip_color[tree$tip.label], cex=.5, show.node.label = TRUE)
 ```
+
+

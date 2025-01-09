@@ -357,40 +357,37 @@ display: none;
 </div>
 
 
-<hr />
-<div id="learning-objectives" class="section level3">
-<h3>Learning Objectives</h3>
-<ul>
-<li></li>
-<li>plot trees using scripts</li>
-</ul>
-<hr />
+<div id="alignments-und-phylogenetische-bäume-mit-webtools-erstellen" class="section level2">
+<h2>Alignments und phylogenetische Bäume mit Webtools erstellen</h2>
 <p>Erzeugen Sie ein MSA von den Dateien <em>TTR_clean.fas</em> und
 <em>RAG2_clean.fas</em> mit <em>clustalOmega</em>, <em>mafft</em> oder
 <em>muscle5</em> (<a href="https://www.ebi.ac.uk/jdispatcher/msa" class="uri">https://www.ebi.ac.uk/jdispatcher/msa</a>).</p>
-<p>Betrachten Sie die Alignmente? Gibt es potientielle Probleme?
-Welche?</p>
+<ul>
+<li>Betrachten Sie die Alignmente? Gibt es potientielle Probleme?
+Welche?</li>
+</ul>
 <p>Benutzen Sie die Datei <em>concatenated_dna.fasta</em> um einen
 phylogenetischen Baum zu berechenen (<a href="http://iqtree.cibiv.univie.ac.at/" class="uri">http://iqtree.cibiv.univie.ac.at/</a>). Benutzen Sie die
 Standardeinstellungen.</p>
 <ul>
 <li><p>Welches Model wurde verwendet?</p></li>
-<li><p>Sind die unterscheiedlichen Familien (Katzen, Hunde, Bären, etc.
+<li><p>Sind die unterschiedlichen Familien (Katzen, Hunde, Bären, etc.)
 monophyletic?</p></li>
 <li><p>Sie können die Bäume mit (<a href="https://itol.embl.de/" class="uri">https://itol.embl.de/</a>) anschauen!</p></li>
 </ul>
 </div>
-<div id="bäume-und-alignments-in-r-visualisieren" class="section level1">
-<h1>Bäume und Alignments in R visualisieren</h1>
+<div id="bäume-und-alignments-in-r-visualisieren" class="section level2">
+<h2>Bäume und Alignments in R visualisieren</h2>
 <p>An den Computern im Übungsraum ist R / RStudio und die Pakete die wir
-benutzen schon installiert.</p>
-<p>Öffnen Sie RStudio und kopieren Sie den folgenden Code in die Konsole
-(Console). Zuerst laden wir zwei Packete die Phylogonien erstellen und
-bearbeiten.</p>
+benutzen schon installiert. Hier wollen wir kurz zeigen welche
+Möglichkeiten Skripten zeigen.</p>
+<p>Öffnen Sie RStudio auf den Lab-Computern und kopieren Sie den
+folgenden Code in die Konsole (Console). Zuerst laden wir zwei Packete
+die Phylogonien erstellen und bearbeiten.</p>
 <pre class="r"><code>library(ape)
 library(phangorn)</code></pre>
-<p>Danach laden wir 3 Datensätze, einen phylogenitischen Baum, ein
-Alignment und eine Tabelle mit information zu unseren Daten.</p>
+<p>Danach laden wir 3 Datensätze, einen phylogenetischen Baum, ein
+Alignment und eine Tabelle mit Information zu unseren Daten.</p>
 <pre class="r"><code>tree_file &lt;- &quot;https://raw.githubusercontent.com/KlausVigo/Mol504/refs/heads/main/iqtree/concatenated_dna.fasta.treefile&quot;
 align_file &lt;- &quot;https://raw.githubusercontent.com/KlausVigo/Mol504/refs/heads/main/data/concatenated_dna.fasta&quot;
 tab_file &lt;- &quot;https://raw.githubusercontent.com/KlausVigo/Mol504/refs/heads/main/data/cats_dogs.csv&quot;
